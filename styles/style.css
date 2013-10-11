@@ -1,0 +1,186 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 600px;
+    min-height: 600px;
+}
+
+@-webkit-keyframes redbg  {
+    0%, 100% {
+        background-color: #db6447;
+    }
+    33%, 66% {
+        background-color: #bf3438;
+    }
+    55% {
+        background-color: #a6385e;
+    }
+}
+@keyframes redbg {
+    0%, 100% {
+        background-color: #db6447;
+    }
+    33%, 66% {
+        background-color: #bf3438;
+    }
+    55% {
+        background-color: #a6385e;
+    }
+}
+
+body {
+    -webkit-animation: redbg 5s infinite;
+    animation: redbg 5s infinite;
+    background-color: #db5053;
+    -webkit-transition: background-color .5s ease;
+    -moz-transition: background-color .5s ease;
+    -ms-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+body.dragover {
+    background-color: #a63d41 !important;
+}
+
+.container {
+    width: 560px;
+    height: 560px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.container .title {
+    width: 556px;
+    height: 86px;
+    background: url("/images/header.png") center;
+}
+.body {
+    overflow: hidden;
+    background-image: url('/images/Pages2PDF.png');
+    width: 355px;
+    height: 281px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    margin-top: 60px;
+}
+.action {
+    margin: 63px 37px 37px;
+    overflow: hidden;
+    width: 280px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+}
+.uploader, .downloader {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 60px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.uploader {
+    background-image: url('/images/button-upload.png');
+}
+.downloader {
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+    background-image: url('/images/button-download.png');
+}
+body.downloading .uploader {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+body.downloading .downloader {
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    transform: rotateX(0);
+}
+body.downloading .body .text {
+
+}
+.uploader input {
+    -webkit-transform: scale(2,10);
+    -moz-transform: scale(2,10);
+    -ms-transform: scale(2,10);
+    -o-transform: scale(2,10);
+    transform: scale(2,10);
+    opacity: 0;
+}
+
+.text {
+    width: 100% !important;
+    color: #d0cac2;
+    text-align: center;
+    font-family: Calibri, 'Trebuchet MS', Verdana, sans-serif;
+}
+.text strong {
+    color: white;
+    font-weight: normal;
+}
+.onemore {
+    opacity: 0;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+body.downloading .onemore {
+    opacity: 1;
+}
+body.downloading .body .text {
+    opacity: 0;
+}
+
+.onemore {
+    display: block;
+    background-image: url('/images/onemore.png');
+    width: 130px;
+    height: 44px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.byuprock {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-image: url('/images/uprock.png');
+    width: 105px;
+    height: 41px;
+    margin: 20px;
+}
+
+.social {
+    margin-top: 60px;
+}
+.social > * {
+    display: inline-block;
+    width: 130px;
+    margin-top: 10px;
+}
