@@ -53,8 +53,9 @@ body.dragover {
     margin: auto;
 }
 .container .title {
-    width: 556px;
-    height: 86px;
+    width: 524px;
+    height: 80px;
+    background-repeat: no-repeat;
     background: url("/images/header.png") center;
 }
 .body {

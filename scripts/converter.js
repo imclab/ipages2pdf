@@ -18,11 +18,15 @@ function processZip(zipdata) {
             }
             var blob = new Blob([uintArray], {type: 'application/pdf'});
 
-            var link = (URL || webkitURL).createObjectURL(blob);
-            if (link.indexOf('pages-pdf') === -1) {
-                link = 'data:application/pdf;base64,'+btoa(targetEntry.data)
+            if (navigator.msSaveOrOpenBlob) {
+                navigator.msSaveOrOpenBlob(blob, 'preview.pdf')
+            } else {
+                var link = (URL || webkitURL).createObjectURL(blob);
+                if (link.indexOf(document.location.host) === -1) {
+                    link = 'data:application/pdf;base64,'+btoa(targetEntry.data)
+                }
+                gotLink(link);
             }
-            gotLink(link);
         }
     }
 }
